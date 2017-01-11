@@ -1,4 +1,5 @@
 @import 'utility';
+@import url('https://fonts.googleapis.com/css?family=Holtwood+One+SC');
 
 html {
   text-size-adjust: 100%;
@@ -14,6 +15,7 @@ body,
 #root,
 .app {
   min-height: 100vh;
+  text-align: center;
 }
 
 .app {
@@ -21,9 +23,65 @@ body,
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
+  background-image: url('http://www.psd-dude.com/tutorials/resources-images/40-grass-texture-with-high-res-quality-/360-grass--texture.jpg');
+  background-position: center;
+
+  .head {
+    background-image: url('https://image-pd.s3.envato.com/files/131392174/Wood%20Background%20i.jpg');
+    background-size: contain;
+    font-family: 'Holtwood One SC', serif;
+    background-position: top;
+    padding: 10px;
+    min-height: 150px;
+    //border-radius: 10px;
+    //padding-top: 25px;
+    width: 100vw;
+    margin-top: -5px;
+    color: black;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+
+    h1 {
+      margin-top: 0;
+      font-size: 1em;
+      max-width: 400px;
+    }
+  }
 }
 
-.gameboard {
+.selectGame {
+  align-items: center;
+  color: white;
+}
+
+.ended {
+  height: 500px;
+  width: 500px;
+  background-color: hsla(213, 25%, 41%, 0);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 10px;
+  padding-bottom: 40px;
+  max-width: 80vw;
+}
+
+.scooper {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 50px;
+
+  button {
+    height: 100px;
+    width: 100px;
+    background-image: url('http://www.psd-dude.com/tutorials/resources-images/40-grass-texture-with-high-res-quality-/360-grass--texture.jpg');
+    border-radius: 5px;
+    border: solid white 2px;
+  }
+}
+
+.GameBoard {
   table {
     border-spacing: 0;
 
@@ -33,31 +91,54 @@ body,
       border: 1px solid black;
       text-align: center;
       line-height: 16px;
+      color: white;
 
-      &.unrevealed {
-        background-color: rgb(148, 148, 148);
-      }
-
-      &.empty,
+      &.unrevealed,
       &.numbered {
-        background-color: rgb(232, 232, 232);
+        background-image: url('http://www.psd-dude.com/tutorials/resources-images/40-grass-texture-with-high-res-quality-/360-grass--texture.jpg');
+        //background-size: cover;
       }
 
-      &.bomb {
-        background-color: rgb(250, 89, 89);
+      &.empty {
+        background-color: hsla(85, 67%, 43%, 1);
+      }
+
+      &.bomb,
+      &.flagbomb {
+        background-color: hsla(85, 67%, 43%, 1);
+        background-image: url('https://cdn.shopify.com/s/files/1/1061/1924/files/Poop_Emoji.png?9898922749706957214');
+        background-size: contain;
       }
 
       &.flagged {
-        background-color: rgb(109, 117, 167);
-      }
-
-      &.flagbomb {
-        background-color: rgb(158, 0, 255);
+        background-color: hsla(85, 71%, 26%, 1);
+        background-image: url('http://www.iconsdb.com/icons/preview/orange/flag-xxl.png');
+        background-size: contain;
       }
     }
   }
 }
 
+.scoopAgain {
+  height: 150px;
+  width: 150px;
+  font-size: 20px;
+  color: white;
+  background-image: url('http://www.psd-dude.com/tutorials/resources-images/40-grass-texture-with-high-res-quality-/360-grass--texture.jpg');
+  border-radius: 5px;
+  border: solid white 2px;
+
+  p {
+    margin-top: -5px;
+  }
+
+  img {
+    margin-top: -15px;
+    margin-bottom: -10px;
+  }
+}
+
 footer {
   padding: 1em;
+  color: white;
 }
